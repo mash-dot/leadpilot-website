@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadPilot - Get More Emergency Calls For Your Plumbing Business</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .paper-plane {
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+        
+        .cta-button {
+            background: #2563eb;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #1d4ed8;
+        }
+
+        .custom-package-button {
+            background: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .custom-package-button:hover {
+            background: #2563eb;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Results Section */
+        .results {
+            background: #f8fafc;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        .testimonial-company {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1e293b;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .step-number {
+            background: #2563eb;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card.featured {
+            border-color: #2563eb;
+            transform: scale(1.05);
+            position: relative;
+        }
+        
+        .pricing-card.custom-package {
+            border: 2px dashed #2563eb;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .custom-badge {
+            background: #f59e0b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin: 1rem 0;
+        }
+        
+        .custom-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 1rem 0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="paper-plane">✈️</span>
+                    LeadPilot
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="cta-button">Get Free Audit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Stop Losing Emergency Calls To Your Competitors</h1>
+            <p>We help plumbing companies dominate Google Search to get more high-value emergency calls and grow their business.</p>
+            <a href="#contact" class="cta-button">Get Your Free Google Ads Audit</a>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real Results for Plumbing Businesses</h2>
+                <p>See what our clients achieve with our proven system</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">23+</div>
+                    <p>Emergency Calls Per Month</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">8-12</div>
+                    <p>Booked Jobs Per Month</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">$4,200+</div>
+                    <p>Additional Monthly Revenue</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">3.2x</div>
+                    <p>Average ROI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Real plumbing business owners, real results</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"LeadPilot transformed our business! We went from 2-3 emergency calls per week to 5-7 per DAY. Best investment we've ever made."</p>
+                    <div class="testimonial-author">Mike Johnson</div>
+                    <div class="testimonial-company">Owner, RapidFlow Plumbing</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I was skeptical about Google Ads, but LeadPilot delivered immediately. We got our first emergency call within 4 hours of launching. Unreal!"</p>
+                    <div class="testimonial-author">Sarah Chen</div>
+                    <div class="testimonial-company">ProFlow Plumbing Services</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The ROI is incredible. We spend $3,000/month and get back $12,000+ in new business. Finally found a marketing company that actually understands plumbing."</p>
+                    <div class="testimonial-author">James Wilson</div>
+                    <div class="testimonial-company">Wilson & Sons Plumbing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How We Get You More Emergency Calls</h2>
+                <p>Our proven 3-step system for plumbing companies</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>We Analyze & Plan</h3>
+                    <p>We conduct a complete audit of your current online presence and identify exactly where you're losing calls to competitors.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Dominate Google Search</h3>
+                    <p>We set up and optimize your Google Ads to ensure you appear #1 when homeowners search for emergency plumbing services.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>We Deliver Qualified Calls</h3>
+                    <p>We focus only on high-intent emergency searches that convert to $500+ service calls, not just website visitors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>No contracts, cancel anytime</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter Package</h3>
+                    <div class="price">$2,500/mo</div>
+                    <ul class="pricing-features">
+                        <li>$1,000 Management Fee</li>
+                        <li>$1,500 Ad Spend (you pay direct)</li>
+                        <li>20-30 Qualified Calls/Month</li>
+                        <li>Weekly Performance Reports</li>
+                        <li>24/7 Campaign Monitoring</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">MOST POPULAR</div>
+                    <h3>Pro Package</h3>
+                    <div class="price">$4,000/mo</div>
+                    <ul class="pricing-features">
+                        <li>$1,500 Management Fee</li>
+                        <li>$2,500 Ad Spend (you pay direct)</li>
+                        <li>35-45 Qualified Calls/Month</li>
+                        <li>Daily Performance Reports</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Competitor Analysis</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                <div class="pricing-card custom-package">
+                    <div class="custom-badge">CUSTOM PACKAGE</div>
+                    <h3>Enterprise Solution</h3>
+                    <div class="custom-price">Tailored to Your Business</div>
+                    <ul class="pricing-features">
+                        <li>Custom Management Fee Structure</li>
+                        <li>Flexible Ad Spend Budget</li>
+                        <li>50+ Qualified Calls/Month</li>
+                        <li>Real-time Performance Dashboard</li>
+                        <li>Dedicated Strategy Team</li>
+                        <li>Advanced Competitor Intelligence</li>
+                        <li>Multi-Channel Campaigns</li>
+                        <li>Premium Support & Training</li>
+                    </ul>
+                    <a href="#contact" class="custom-package-button">Get Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Get More Emergency Calls?</h2>
+            <p>Book your free, no-obligation Google Ads audit today</p>
+            <a href="#" class="cta-button" style="background: #f59e0b; margin-top: 2rem;">Book Free Audit Call</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="how-it-works" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <h3>How do you handle payments?</h3>
+                    <p>You pay Google directly for ad spend, just like paying for electricity. We charge a separate flat management fee for our expertise.</p>
+                </div>
+                <div class="step">
+                    <h3>How quickly will I see results?</h3>
+                    <p>Most clients see their first emergency calls within 24-48 hours of campaign launch.</p>
+                </div>
+                <div class="step">
+                    <h3>What if I've tried Google Ads before?</h3>
+                    <p>Most plumbers get burned by generalists. We specialize exclusively in plumbing emergencies and deliver 3-5x better results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>LeadPilot</h3>
+                    <p>Helping plumbing businesses dominate Google Search and get more emergency calls.</p>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Email: hello@leadpilot.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <p>Google Ads Management</p>
+                    <p>Emergency Call Generation</p>
+                    <p>Plumbing Marketing</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LeadPilot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
